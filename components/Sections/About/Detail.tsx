@@ -21,6 +21,9 @@ import {
   SiNextDotJs,
   SiNodeDotJs,
   SiDocker,
+  SiFigma,
+  SiPostgresql,
+  SiAzuredevops,
 } from 'react-icons/si'
 import { GiCoffeePot } from 'react-icons/gi'
 import { IoMdOpen } from 'react-icons/io'
@@ -32,7 +35,7 @@ type ISkillSetModal = {
 const Detail = ({ onOpen }: ISkillSetModal) => {
   const emphasis = useColorModeValue('teal.500', 'cyan.200')
   const currentYear = new Date().getFullYear()
-  const professionalYears = currentYear - 2016
+  const professionalYears = currentYear - 2020
 
   return (
     <Stack
@@ -51,7 +54,7 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
         What i do.
       </Heading>
       <Text variant="description">
-        I`ve been coding professionally for {professionalYears} years now and
+        I've been coding professionally for {professionalYears} years now and
         currently working as a <b>Software Engineer</b> that focuses on{' '}
         <b>architecture</b>, <b>APIs</b>,{' '}
         <Tooltip
@@ -63,26 +66,26 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
             <b>nitty-gritty business logics</b>
           </Text>
         </Tooltip>{' '}
-        and even <b>front end integration</b> stuff now, how time flies!
+        and mostly <b>front end</b> stuff now, how time flies!
         <br /> <br />
         Here are few technologies that are cup of my{' '}
         <Tooltip
-          label="I only drink tea if I needed too!"
-          aria-label="I hate Tea!"
+          label="I love Mint Tea!"
+          aria-label="I love Mint Tea!"
           hasArrow
         >
-          <Text as="span" variant="emphasis" textDecorationLine="line-through">
-            tea
+          <Text as="span" variant="emphasis" textDecorationLine="underlined">
+            mint tea
           </Text>
         </Tooltip>{' '}
-        coffee <Icon as={GiCoffeePot} color={emphasis} />.
+        <Icon as={GiCoffeePot} color={emphasis} />.
       </Text>
 
       <SimpleGrid columns={2} spacing={4}>
         <List spacing={3}>
           <ListItem fontSize="small" display="flex" alignItems="center">
-            <ListIcon as={SiDotNet} color={emphasis} fontSize="2em" />
-            C# - .NET.Core
+            <ListIcon as={SiFigma} color={emphasis} fontSize="2em" />
+            Figma
           </ListItem>
           <ListItem fontSize="small" display="flex" alignItems="center">
             <ListIcon as={SiJavascript} color={emphasis} fontSize="2em" />
@@ -96,6 +99,11 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
           <ListItem fontSize="small" display="flex" alignItems="center">
             <ListIcon as={SiNodeDotJs} color={emphasis} fontSize="2em" />
             Node
+          </ListItem>
+
+          <ListItem fontSize="small" display="flex" alignItems="center">
+            <ListIcon as={SiPostgresql} color={emphasis} fontSize="2em" />
+            Postgres
           </ListItem>
         </List>
         <List spacing={3}>
@@ -114,6 +122,10 @@ const Detail = ({ onOpen }: ISkillSetModal) => {
           <ListItem fontSize="small" display="flex" alignItems="center">
             <ListIcon as={SiDocker} color={emphasis} fontSize="2em" />
             Docker
+          </ListItem>
+          <ListItem fontSize="small" display="flex" alignItems="center">
+            <ListIcon as={SiAzuredevops} color={emphasis} fontSize="2em" />
+            Azure Devops
           </ListItem>
         </List>
         <Box>

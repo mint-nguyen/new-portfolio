@@ -70,7 +70,7 @@ const Sidebar = () => {
             textTransform="uppercase"
             variants={fadeInUp}
           >
-            Marc Jhon
+            Mint
           </MotionHeading>
           <MotionHeading
             as="h2"
@@ -82,16 +82,8 @@ const Sidebar = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            Lawingco.
+            Nguyen.
           </MotionHeading>
-          <MotionText
-            colorScheme="gray"
-            fontSize="smaller"
-            className={styles.marginTopForce}
-            variants={fadeInUp}
-          >
-            Or you could call me KL. That works too . . .
-          </MotionText>
 
           <MotionHeading
             as="h3"
@@ -116,7 +108,7 @@ const Sidebar = () => {
               Thank you!
             </Text>
             <br />I am software engineer that specializes at backend apis, front
-            end integration, recently found myself studying UX too.
+            end integration, and designing UI/UX on Figma too.
           </MotionText>
           <MotionButton
             size="lg"
@@ -128,7 +120,7 @@ const Sidebar = () => {
             width="120px"
             variants={simpleOpacity}
             as={'a'}
-            href="mailto:marcjhon18@gmail.com"
+            href="mailto:pnguyen.lhp@gmail.com"
             target="_blank"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
