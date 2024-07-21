@@ -52,12 +52,13 @@ const GetInTouch = () => {
         </Text>
       </Heading>
       <Text variant="description">
-        Though, I am fairly introverted myself. I do reply to messages as long
-        as my human interaction battery lasts. Coding, work, movies or even weeb
-        stuff, anything is cool. So feel free to message me on any of my social
+        I am a bubbly person, I love putting a smile one everyone's face. And I
+        love connecting with like-minded people. Coding, work, movies or even
+        weeb stuff, anything is cool. If you are in Calgary and love hiking,
+        don't hesitate to ask! So feel free to message me on any of my social
         media or shoot me an{' '}
         <Link
-          href="mailto:marcjhon18@gmail.com"
+          href="mailto:pnguyen.lhp@gmail.com"
           target="_blank"
           rel="noreferrer"
         >
@@ -77,14 +78,14 @@ const GetInTouch = () => {
           variant="description"
           textDecoration="none"
           rel="noreferrer"
-          href="https://github.com/klawingco/kl_portfolio"
+          href="https://github.com/mint-nguyen"
           target="_blank"
           _focus={{ boxShadow: 'none' }}
         >
           <Text as="span">
             <Icon as={RiGithubFill} h={6} w={6} /> <br />
             Designed and Made with <Icon as={RiHeartPulseFill} /> <br />
-            KL Lawingco <Icon as={RiCopyleftLine} /> 2021
+            Mint Ng <Icon as={RiCopyleftLine} /> 2024
           </Text>
         </Link>
       </Box>

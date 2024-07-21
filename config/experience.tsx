@@ -1,6 +1,6 @@
 import { Link } from '@chakra-ui/react'
 
-export type Company = 'Deloitte' | 'SCG' | 'Blotocol'
+export type Company = 'HatchInc' | 'Rocketplace' | 'RCS' | 'Base'
 
 export type CompanyDetail = {
   name: string
@@ -19,145 +19,114 @@ export type CompanyDetail = {
 export const Experiences: {
   [key in Company]: CompanyDetail
 } = {
-  Deloitte: {
-    name: 'Deloitte',
-    longName: 'Deloitte Consulthing Phils. Delivery Center',
-    subDetail: 'Consulthing Phils. Delivery Center',
-    url: 'https://www2.deloitte.com/',
-    position: 'Software Engineer Consultant',
-    duration: 'Sep 2021 - Present',
+  HatchInc: {
+    name: 'Hatch',
+    longName: 'Hatch Inc.',
+    subDetail:
+      'Automates decision-making processes and disbursements across lending industries.',
+    url: 'https://www.hatchlabs.app/',
+    position: 'Founding Engineer',
+    duration: 'Feb 2024 - Present',
     logo: {
-      light: '/worked_at_logos/deloitte/Deloitte_logo_black.png',
-      dark: '/worked_at_logos/deloitte/Deloitte_logo.png',
+      light: '/worked_at_logos/hatch/blue-transparent.png',
+      dark: '/worked_at_logos/hatch/blue-transparent.png',
     },
     roles: [
       <>
-       Contributed to the design and development of a comprehensive .NET payment integration project for a client
-       That covered credit card payments and subscription management.
-       Introduced Stripe as a new payment provider within the system architecture.
-       Participated in triaging, fixing and adding new functionalitiesto multiple Azure powered APIs of the same client.
+        Co-lead technical team in the development of a comprehensive loan
+        management system for both personal and business loans.
       </>,
       <>
-        Worked as a Sitecore Backend on new{' '}
-        <Link
-          aria-label="Deloitte Digital AU"
-          href="https://www.deloittedigital.com.au/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Deloitte Digital AU Site.
-        </Link>
+        Collaborate directly with stakeholders to gather requirements, define
+        project scope, and ensure alignment with businessobjectives.
       </>,
       <>
-        Udergone training for .NET Sitecore 10,
-        Sitecore SXA and different topologies it provides.{' '} and Passed {' '}
-        <Link
-          aria-label="Sitecore 10 .NET Developer Certification"
-          href="/certification/Lawingco-Sitecore 10 NET Developer Cert.pdf"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Sitecore 10 .NET Developer Certification.
-        </Link>
+        Design wireframes and mockups using Figma, translating requirements into
+        visual designs for user interfaces andexperiences.
+      </>,
+      <>
+        Manage end-to-end code base activities including code reviews, ensuring
+        adherence to coding standards and bestpractices.
+      </>,
+      <>
+        Orchestrate deployment pipelines from development through to production,
+        ensuring seamless and reliable releases.
       </>,
     ],
   },
-  SCG: {
-    name: 'Scentregroup',
-    longName: 'Scentregroup Limited AU',
-    subDetail: 'via Prosource BPO',
-    url: 'https://www.scentregroup.com/',
+  Rocketplace: {
+    name: 'Rocketplace',
+    longName: 'Rocketplace Inc.',
+    subDetail: 'Make crypto approachable to everyone',
+    url: 'https://www.crunchbase.com/organization/rocketplace',
     position: 'Software Engineer',
-    duration: 'Feb 2020 - Sep 2021',
+    duration: 'Sep 2022 - Nov 2023',
     logo: {
-      light: '/worked_at_logos/scg/SCG_400x400.jpg',
-      dark: '/worked_at_logos/scg/SCG.png',
+      light: '/worked_at_logos/rocketplace/rocket_place_logo.jpg',
+      dark: '/worked_at_logos/rocketplace/rocket_place_logo.jpg',
     },
     roles: [
       <>
-        Revamping the legacy Partner Portal into a new{' '}
-        <Link
-          aria-label="Westfield Marketing Hub"
-          href="https://partner.scentregroup.com/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Westfield Marketing Hub
-        </Link>{' '}
-        using NextJS and Typescript. Restructuring the old express app into a
-        newer architectural design approach.
+        Maintained and optimized existing software systems, resolving bugs and
+        improving system reliability and security.
       </>,
       <>
-        Created multiple Contentful and Bynder extensions to improve BX process
-        better.
+        Collaborated with a cross-functional team to design and deploy new
+        features for web applications, resulting in a 40% increase in website
+        performance.
       </>,
       <>
-        Worked on maintaining{' '}
-        <Link
-          variant="primaryLink"
-          href="https://www.westfield.com.au/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Westfield
-        </Link>{' '}
-        main site and Graphql apis written in NodeJS.
-      </>,
-      <>
-        Migrating of existing marketing email related tools and batch jobs from
-        Responsys into new platform called Braze.
-      </>,
-      <>
-        Hired at early 2020, first major task was helping with selecting a new
-        marketing vendor that can scale and also enable us to have
-        personalisation as well, selecting{' '}
-        <Link
-          aria-label="Braze"
-          href="https://www.braze.com/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          Braze
-        </Link>{' '}
-        as a result.
+        Revamp the whole dashboard and portfolio page, leading to a 10% increase
+        in signups.
       </>,
     ],
   },
-  Blotocol: {
-    name: 'Blotocol',
-    longName: 'Blotocol Philippines',
-    subDetail: 'formerly IVP Global Inc.',
-    url: 'https://blotocol.com/',
-    position: 'Senior Software Engineer',
-    duration: 'Nov 2016 - Feb 2020',
+  RCS: {
+    name: 'RCS',
+    longName: 'Resilience Corporate Services',
+    subDetail: 'Resilience Corporate Services Inc.',
+    url: 'https://resiliencecorporateservices.com/',
+    position: 'Frontend Developer',
+    duration: 'Feb 2022 - Sep 2022',
     logo: {
-      light: '/worked_at_logos/ivp/blotocol_logo-dark.png',
-      dark: '/worked_at_logos/ivp/blotocol-logo-white.png',
+      light: '/worked_at_logos/rcs/rcs.png',
+      dark: '/worked_at_logos/rcs/rcs.png',
+    },
+    roles: [
+      <>Exclusively responsible for frontend development.</>,
+      <>
+        Collaborating closely with TradeX's data scientists to create a web
+        application visualizing the arbitrage vehicle platform.
+      </>,
+    ],
+  },
+  Base: {
+    name: 'Base',
+    longName: 'InterU Network Inc.',
+    subDetail: 'QUANTIFYING SOFT SKILLS WITH AI',
+    url: 'https://base.town/',
+    position: 'Data Engineer',
+    duration: 'Oct 2021 - Feb 2022',
+    logo: {
+      light: '/worked_at_logos/base/base_name.png',
+      dark: '/worked_at_logos/base/base_name.png',
     },
     roles: [
       <>
-        Developed a Twitter Raffle Campaign / Contest Bot called Camps with
-        statistics similar to Facebook Ads.
+        Developed and maintained scalable data pipelines to process and analyze
+        large volumes of data.
       </>,
       <>
-        In 2019 got promoted as Senior Software Engineer and worked with Cryto
-        Exchange, Smart Contracts and other APIs using several techs such as
-        NodeJS, .NET Core and React.
-      </>,
-      <>
-        Create highly scalable Japanese e-commerce sites. Most notable clients
-        were TV Tokyo, Layla EC using .NET.
-      </>,
-      <>
-        Hired at 2016, Undergone Japanese language training first. Shortly
-        after, worked with in-house .NET MVC Framework called ERS.
+        Optimized database performance and query execution to improve overall
+        system effi ciency
       </>,
     ],
   },
 }
 
 export const ExperiencesList = [
-  Experiences.Deloitte,
-  Experiences.SCG,
-  Experiences.Blotocol,
+  Experiences.HatchInc,
+  Experiences.Rocketplace,
+  Experiences.RCS,
+  Experiences.Base,
 ]
