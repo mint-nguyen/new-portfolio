@@ -139,6 +139,34 @@ const galleryStagger = {
   },
 }
 
+const popIn = {
+  initial: {
+    scale: 0.7,
+    opacity: 0,
+  },
+  animate: {
+    scale: [0.7, 1.06, 1],
+    opacity: 1,
+    transition: {
+      duration: DURATIONS.Normal,
+      ease: easing,
+    },
+  },
+}
+
+// Dynamic variant: pass the delay through the `custom` prop.
+const floatY = {
+  animate: (delay = 0) => ({
+    y: [0, -10, 0],
+    transition: {
+      duration: 4,
+      ease: 'easeInOut',
+      repeat: Infinity,
+      delay,
+    },
+  }),
+}
+
 export {
   DURATIONS,
   easing,
@@ -151,4 +179,6 @@ export {
   menuAnim,
   scaleUp,
   avatarAnimation,
+  popIn,
+  floatY,
 }

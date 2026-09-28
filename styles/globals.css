@@ -1,8 +1,16 @@
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 88px;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 a {
@@ -10,64 +18,46 @@ a {
   text-decoration: none;
 }
 
-* {
-  box-sizing: border-box;
+body::-webkit-scrollbar {
+  width: 0.4em;
 }
-
-body::-webkit-scrollbar{
- width: 0.4em;
-}
-body::-webkit-scrollbar-track-piece{
+body::-webkit-scrollbar-track-piece {
   width: 10px;
 }
-body::-webkit-scrollbar-thumb{
-  background: var(--chakra-colors-gray-600);
+body::-webkit-scrollbar-thumb {
+  background: rgba(127, 140, 134, 0.5);
   border-radius: 1em;
 }
 
-/* Fallback */
-@media (max-width: 480px) { 
-  body::-webkit-scrollbar{
-    width: 0;
-  }
-  body::-webkit-scrollbar-track-piece{
+:focus-visible {
+  outline: 2px solid #7ee0bc;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.skip-link {
+  position: absolute;
+  top: 8px;
+  left: -9999px;
+  z-index: 1000;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: #7ee0bc;
+  color: #0e1512;
+  font-weight: 600;
+}
+.skip-link:focus {
+  left: 8px;
+}
+
+@media (max-width: 480px) {
+  body::-webkit-scrollbar {
     width: 0;
   }
 }
 
-/* Fallback */
-@media (max-width: 1279px) { 
-  #mainGrid{
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(1, 0);
-  }
-  .contentRow{
-    min-height: auto !important;
-  }  
-}
-/* Tablet Support */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (orientation: portrait) 
-  and (-webkit-min-device-pixel-ratio: 1) {
-  body{
-    overflow-y: scroll !important;
-  }         
-  #mainGrid{
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(1, 0);
-  }
-  main{
-    overflow-y: unset  !important;
-  }
-  #sidebarCircle{
-    display: none !important;
-  }
-  .contentRow{
-    min-height: auto !important;
-    padding: var(--chakra-space-14);
-    justify-content: center;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
-
