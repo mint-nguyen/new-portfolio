@@ -1,25 +1,23 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useInView } from 'react-intersection-observer'
-import { motion, useAnimation } from 'framer-motion'
+import { motion, useReducedMotion } from 'framer-motion'
 import { fadeInUpSlower } from 'config/animations'
+
 const FadeInWhenVisible = ({ children }: { children: React.ReactNode }) => {
-  const controls = useAnimation()
+  const reduce = useReducedMotion()
   const [ref, inView] = useInView({
-    threshold: 0.3,
+    threshold: 0.1,
+    triggerOnce: true,
+    rootMargin: '0px 0px -8% 0px',
   })
 
-  useEffect(() => {
-    if (inView) {
-      controls.start('animate')
-    }
-  }, [controls, inView])
+  if (reduce) return <div>{children}</div>
 
   return (
     <motion.div
-      style={{ margin: 0 }}
       ref={ref}
-      animate={controls}
       initial="initial"
+      animate={inView ? 'animate' : 'initial'}
       variants={fadeInUpSlower}
     >
       {children}
