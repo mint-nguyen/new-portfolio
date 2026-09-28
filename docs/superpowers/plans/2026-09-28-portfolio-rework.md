@@ -62,7 +62,7 @@ Deleted (in the task noted): `public/certification/` (T1), `components/Logo/styl
 - Modify: `.nvmrc`
 - Delete: `public/certification/Lawingco-Sitecore 10 NET Developer Cert.pdf`
 
-- [ ] **Step 1: Install and bump dependencies**
+- [x] **Step 1: Install and bump dependencies**
 
 Run from the repo root:
 
@@ -73,7 +73,7 @@ yarn add -D @types/canvas-confetti@^1.9.0
 
 Expected: `success Saved 3 new dependencies` (or similar), `package.json` shows `"react-icons": "^4.12.0"`, `"canvas-confetti": "^1.9.4"`, `"@types/canvas-confetti": "^1.9.0"`.
 
-- [ ] **Step 2: Verify the renamed icons exist**
+- [x] **Step 2: Verify the renamed icons exist**
 
 ```bash
 node -e "const si=require('react-icons/si'); for (const n of ['SiNodedotjs','SiNextdotjs','SiNestjs','SiChakraui','SiMui','SiFirebase','SiPython']) console.log(n, typeof si[n])"
@@ -81,7 +81,7 @@ node -e "const si=require('react-icons/si'); for (const n of ['SiNodedotjs','SiN
 
 Expected: every line ends with `function`.
 
-- [ ] **Step 3: Update `.nvmrc` and remove the template author's certificate**
+- [x] **Step 3: Update `.nvmrc` and remove the template author's certificate**
 
 ```bash
 printf '22\n' > .nvmrc
@@ -90,7 +90,7 @@ git rm -q "public/certification/Lawingco-Sitecore 10 NET Developer Cert.pdf"
 
 Expected: `public/certification` no longer exists.
 
-- [ ] **Step 4: Confirm the old code still builds with react-icons 4.12**
+- [x] **Step 4: Confirm the old code still builds with react-icons 4.12**
 
 The old `config/skills.ts` and `About/Detail.tsx` import icons that were renamed in react-icons 4.3 (`SiNodeDotJs`, `SiNextDotJs`, `SiVueDotJs`, `SiSocketDotIo`, `SiMaterialUi`, `SiVisualstudiocode`). Run:
 
@@ -115,7 +115,7 @@ npx tsc --noEmit
 
 Expected: no output (exit 0). If `SiVisualstudiocode` or `SiMicrosoftsqlserver` is reported missing, delete that entry from `config/skills.ts` (both are unused by the new design).
 
-- [ ] **Step 5: Build and commit**
+- [x] **Step 5: Build and commit**
 
 ```bash
 yarn build 2>&1 | tail -15
@@ -138,7 +138,7 @@ Expected: build output includes `Compiled successfully` and the `/` route; commi
 - Modify: `pages/_document.tsx`
 - Modify: `config/animations.ts` (append)
 
-- [ ] **Step 1: Rewrite `config/theme.ts`**
+- [x] **Step 1: Rewrite `config/theme.ts`**
 
 The two legacy exports `ThemeMode` and `mobileBreakpointsMap` stay until Task 15 because old components import them.
 
@@ -326,7 +326,7 @@ const theme = extendTheme({
 export default theme
 ```
 
-- [ ] **Step 2: Create `hooks/usePalette.ts`**
+- [x] **Step 2: Create `hooks/usePalette.ts`**
 
 ```ts
 import { useColorModeValue } from '@chakra-ui/react'
@@ -337,7 +337,7 @@ const usePalette = (): Palette => useColorModeValue(palette.light, palette.dark)
 export default usePalette
 ```
 
-- [ ] **Step 3: Rewrite `styles/globals.css`**
+- [x] **Step 3: Rewrite `styles/globals.css`**
 
 ```css
 html {
@@ -405,7 +405,7 @@ body::-webkit-scrollbar-thumb {
 }
 ```
 
-- [ ] **Step 4: Update `pages/_document.tsx` (fonts and ColorModeScript)**
+- [x] **Step 4: Update `pages/_document.tsx` (fonts and ColorModeScript)**
 
 ```tsx
 import Document, { Html, Head, Main, NextScript } from 'next/document'
@@ -440,7 +440,7 @@ class MyDocument extends Document {
 export default MyDocument
 ```
 
-- [ ] **Step 5: Append new variants to `config/animations.ts`**
+- [x] **Step 5: Append new variants to `config/animations.ts`**
 
 Add before the `export {` block, and add the two names to the export list:
 
@@ -494,7 +494,7 @@ export {
 }
 ```
 
-- [ ] **Step 6: Typecheck, build, commit**
+- [x] **Step 6: Typecheck, build, commit**
 
 ```bash
 npx tsc --noEmit && yarn build 2>&1 | tail -12
@@ -513,7 +513,7 @@ Expected: tsc silent, build `Compiled successfully`. The old page will look off 
 **Files:**
 - Create: `config/profile.ts`, `config/nav.ts`, `config/stats.ts`, `config/team.ts`, `config/works.ts`, `config/now.ts`
 
-- [ ] **Step 1: Create `config/profile.ts`**
+- [x] **Step 1: Create `config/profile.ts`**
 
 ```ts
 import { IconType } from 'react-icons'
@@ -574,7 +574,7 @@ export const profile = {
 }
 ```
 
-- [ ] **Step 2: Create `config/nav.ts`**
+- [x] **Step 2: Create `config/nav.ts`**
 
 ```ts
 export type NavLink = { label: string; href: string }
@@ -589,7 +589,7 @@ export const navLinks: NavLink[] = [
 ]
 ```
 
-- [ ] **Step 3: Create `config/stats.ts`**
+- [x] **Step 3: Create `config/stats.ts`**
 
 ```ts
 import { yearsShipping } from './profile'
@@ -608,7 +608,7 @@ export const stats: Stat[] = [
 ]
 ```
 
-- [ ] **Step 4: Create `config/team.ts`**
+- [x] **Step 4: Create `config/team.ts`**
 
 ```ts
 import { IconType } from 'react-icons'
@@ -652,7 +652,7 @@ export const principles: Principle[] = [
 ]
 ```
 
-- [ ] **Step 5: Create `config/works.ts`**
+- [x] **Step 5: Create `config/works.ts`**
 
 ```ts
 export type Work = {
@@ -701,7 +701,7 @@ export const works: Work[] = [
 ]
 ```
 
-- [ ] **Step 6: Create `config/now.ts`**
+- [x] **Step 6: Create `config/now.ts`**
 
 ```ts
 import { IconType } from 'react-icons'
@@ -742,7 +742,7 @@ export const nowItems: NowItem[] = [
 ]
 ```
 
-- [ ] **Step 7: Typecheck and commit**
+- [x] **Step 7: Typecheck and commit**
 
 ```bash
 npx tsc --noEmit
@@ -765,7 +765,7 @@ Expected: tsc silent.
 - Create: `components/Layout/Section.tsx`
 - Create: `components/Background/Blobs.tsx`, `components/Background/CursorGlow.tsx`
 
-- [ ] **Step 1: Create `hooks/useScrolled.ts`**
+- [x] **Step 1: Create `hooks/useScrolled.ts`**
 
 ```ts
 import { useEffect, useState } from 'react'
@@ -796,7 +796,7 @@ const useScrolled = (threshold = 24): boolean => {
 export default useScrolled
 ```
 
-- [ ] **Step 2: Create `hooks/useCountUp.ts`**
+- [x] **Step 2: Create `hooks/useCountUp.ts`**
 
 ```ts
 import { useEffect, useState } from 'react'
@@ -838,7 +838,7 @@ const useCountUp = (
 export default useCountUp
 ```
 
-- [ ] **Step 3: Create `hooks/useColorModeFromQuery.ts`**
+- [x] **Step 3: Create `hooks/useColorModeFromQuery.ts`**
 
 ```ts
 import { useEffect } from 'react'
@@ -856,7 +856,7 @@ const useColorModeFromQuery = (): void => {
 export default useColorModeFromQuery
 ```
 
-- [ ] **Step 4: Create `components/Ui/Chip.tsx`**
+- [x] **Step 4: Create `components/Ui/Chip.tsx`**
 
 ```tsx
 import { HStack, Icon, Text } from '@chakra-ui/react'
@@ -901,7 +901,7 @@ const Chip = ({ label, icon, variant = 'solid', size = 'md' }: ChipProps) => {
 export default Chip
 ```
 
-- [ ] **Step 5: Create `components/Ui/SocialLinks.tsx`**
+- [x] **Step 5: Create `components/Ui/SocialLinks.tsx`**
 
 ```tsx
 import { HStack, IconButton } from '@chakra-ui/react'
@@ -943,7 +943,7 @@ const SocialLinks = ({ size = 'md' }: { size?: 'sm' | 'md' | 'lg' }) => {
 export default SocialLinks
 ```
 
-- [ ] **Step 6: Rewrite `components/Layout/FadeWhenVisible.tsx`**
+- [x] **Step 6: Rewrite `components/Layout/FadeWhenVisible.tsx`**
 
 ```tsx
 import React from 'react'
@@ -976,7 +976,7 @@ const FadeInWhenVisible = ({ children }: { children: React.ReactNode }) => {
 export default FadeInWhenVisible
 ```
 
-- [ ] **Step 7: Create `components/Layout/Section.tsx`**
+- [x] **Step 7: Create `components/Layout/Section.tsx`**
 
 The section's accessible name is always the element with id `${id}-heading`. When `heading` is omitted, the child must render a heading with that id.
 
@@ -1061,7 +1061,7 @@ const Section = ({
 export default Section
 ```
 
-- [ ] **Step 8: Create `components/Background/Blobs.tsx`**
+- [x] **Step 8: Create `components/Background/Blobs.tsx`**
 
 Uses `motion.div` (not `motion(Box)`) because it needs framer's `transition` prop.
 
@@ -1155,7 +1155,7 @@ const Blobs = ({ variant = 'hero' }: { variant?: 'hero' | 'soft' }) => {
 export default Blobs
 ```
 
-- [ ] **Step 9: Create `components/Background/CursorGlow.tsx`**
+- [x] **Step 9: Create `components/Background/CursorGlow.tsx`**
 
 ```tsx
 import { useEffect, useRef, useState } from 'react'
@@ -1225,7 +1225,7 @@ const CursorGlow = () => {
 export default CursorGlow
 ```
 
-- [ ] **Step 10: Typecheck and commit**
+- [x] **Step 10: Typecheck and commit**
 
 ```bash
 npx tsc --noEmit
@@ -1246,7 +1246,7 @@ Expected: tsc silent.
 - Delete: `components/Logo/styles.module.css`
 - Create: `components/Nav/Toggle.tsx`, `ThemeToggle.tsx`, `ResumeButton.tsx`, `Links.tsx`, `MobileDrawer.tsx`, `index.tsx`
 
-- [ ] **Step 1: Rewrite `components/Logo/index.tsx` and delete its CSS module**
+- [x] **Step 1: Rewrite `components/Logo/index.tsx` and delete its CSS module**
 
 ```tsx
 import { memo } from 'react'
@@ -1280,7 +1280,7 @@ export default memo(Logo)
 git rm -q components/Logo/styles.module.css
 ```
 
-- [ ] **Step 2: Create `components/Nav/Toggle.tsx`**
+- [x] **Step 2: Create `components/Nav/Toggle.tsx`**
 
 ```tsx
 import { motion } from 'framer-motion'
@@ -1346,7 +1346,7 @@ const MenuToggle = ({
 export default MenuToggle
 ```
 
-- [ ] **Step 3: Create `components/Nav/ThemeToggle.tsx`**
+- [x] **Step 3: Create `components/Nav/ThemeToggle.tsx`**
 
 ```tsx
 import { IconButton, useColorMode } from '@chakra-ui/react'
@@ -1374,7 +1374,7 @@ const ThemeToggle = () => {
 export default ThemeToggle
 ```
 
-- [ ] **Step 4: Create `components/Nav/ResumeButton.tsx`**
+- [x] **Step 4: Create `components/Nav/ResumeButton.tsx`**
 
 ```tsx
 import { Button } from '@chakra-ui/react'
@@ -1398,7 +1398,7 @@ const ResumeButton = ({ size = 'sm' }: { size?: 'sm' | 'md' | 'lg' }) => (
 export default ResumeButton
 ```
 
-- [ ] **Step 5: Create `components/Nav/Links.tsx`**
+- [x] **Step 5: Create `components/Nav/Links.tsx`**
 
 ```tsx
 import { Box, Button, Stack } from '@chakra-ui/react'
@@ -1462,7 +1462,7 @@ const NavLinks = ({
 export default NavLinks
 ```
 
-- [ ] **Step 6: Create `components/Nav/MobileDrawer.tsx`**
+- [x] **Step 6: Create `components/Nav/MobileDrawer.tsx`**
 
 ```tsx
 import {
@@ -1507,7 +1507,7 @@ const MobileDrawer = ({
 export default MobileDrawer
 ```
 
-- [ ] **Step 7: Create `components/Nav/index.tsx`**
+- [x] **Step 7: Create `components/Nav/index.tsx`**
 
 ```tsx
 import {
@@ -1567,7 +1567,7 @@ const Nav = () => {
 export default Nav
 ```
 
-- [ ] **Step 8: Typecheck and commit**
+- [x] **Step 8: Typecheck and commit**
 
 ```bash
 npx tsc --noEmit
@@ -1586,7 +1586,7 @@ Expected: tsc silent. (The old `components/Menu` still compiles because `Logo` k
 **Files:**
 - Create: `components/Sections/Hero/ScrollCue.tsx`, `Orbit.tsx`, `index.tsx`
 
-- [ ] **Step 1: Create `components/Sections/Hero/ScrollCue.tsx`**
+- [x] **Step 1: Create `components/Sections/Hero/ScrollCue.tsx`**
 
 ```tsx
 import { Box, Icon } from '@chakra-ui/react'
@@ -1620,7 +1620,7 @@ const ScrollCue = () => {
 export default ScrollCue
 ```
 
-- [ ] **Step 2: Create `components/Sections/Hero/Orbit.tsx`**
+- [x] **Step 2: Create `components/Sections/Hero/Orbit.tsx`**
 
 ```tsx
 import { Box, Flex, Image } from '@chakra-ui/react'
@@ -1715,7 +1715,7 @@ const Orbit = () => {
 export default Orbit
 ```
 
-- [ ] **Step 3: Create `components/Sections/Hero/index.tsx`**
+- [x] **Step 3: Create `components/Sections/Hero/index.tsx`**
 
 ```tsx
 import {
@@ -1839,7 +1839,7 @@ const Hero = () => {
 export default Hero
 ```
 
-- [ ] **Step 4: Typecheck and commit**
+- [x] **Step 4: Typecheck and commit**
 
 ```bash
 npx tsc --noEmit
@@ -1858,7 +1858,7 @@ Expected: tsc silent. If `MotionText as="span"` errors on the `as` prop type, ch
 **Files:**
 - Create: `components/Sections/Impact/Counter.tsx`, `index.tsx`
 
-- [ ] **Step 1: Create `components/Sections/Impact/Counter.tsx`**
+- [x] **Step 1: Create `components/Sections/Impact/Counter.tsx`**
 
 ```tsx
 import { Box, Text } from '@chakra-ui/react'
@@ -1930,7 +1930,7 @@ const Counter = ({
 export default Counter
 ```
 
-- [ ] **Step 2: Create `components/Sections/Impact/index.tsx`**
+- [x] **Step 2: Create `components/Sections/Impact/index.tsx`**
 
 ```tsx
 import { Box, Container, SimpleGrid } from '@chakra-ui/react'
@@ -1956,7 +1956,7 @@ const Impact = () => {
 export default Impact
 ```
 
-- [ ] **Step 3: Typecheck and commit**
+- [x] **Step 3: Typecheck and commit**
 
 ```bash
 npx tsc --noEmit
@@ -1976,7 +1976,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 - Modify: `components/Sections/About/index.tsx` (rewrite)
 - Delete: `components/Sections/About/Detail.tsx`, `SkillSetModal.tsx`, `styles.module.css`
 
-- [ ] **Step 1: Rewrite `config/skills.ts`**
+- [x] **Step 1: Rewrite `config/skills.ts`**
 
 ```ts
 import { IconType } from 'react-icons'
@@ -2086,7 +2086,7 @@ export const currentlyLearning: string[] = [
 ]
 ```
 
-- [ ] **Step 2: Create `components/Sections/About/Toolbox.tsx`**
+- [x] **Step 2: Create `components/Sections/About/Toolbox.tsx`**
 
 ```tsx
 import { Box, HStack, Icon, Stack, Text, Wrap, WrapItem } from '@chakra-ui/react'
@@ -2157,7 +2157,7 @@ const Toolbox = () => {
 export default Toolbox
 ```
 
-- [ ] **Step 3: Rewrite `components/Sections/About/index.tsx`**
+- [x] **Step 3: Rewrite `components/Sections/About/index.tsx`**
 
 ```tsx
 import { memo } from 'react'
@@ -2221,7 +2221,7 @@ const About = () => {
 export default memo(About)
 ```
 
-- [ ] **Step 4: Delete the old About files, typecheck, commit**
+- [x] **Step 4: Delete the old About files, typecheck, commit**
 
 ```bash
 git rm -q components/Sections/About/Detail.tsx components/Sections/About/SkillSetModal.tsx components/Sections/About/styles.module.css
@@ -2241,7 +2241,7 @@ Expected: tsc silent (the old page still imports `components/Sections/About`, wh
 **Files:**
 - Create: `components/Sections/Team/PrincipleCard.tsx`, `index.tsx`
 
-- [ ] **Step 1: Create `components/Sections/Team/PrincipleCard.tsx`**
+- [x] **Step 1: Create `components/Sections/Team/PrincipleCard.tsx`**
 
 ```tsx
 import { Box, Flex, Heading, Icon, Text } from '@chakra-ui/react'
@@ -2294,7 +2294,7 @@ const PrincipleCard = ({ principle, index }: { principle: Principle; index: numb
 export default PrincipleCard
 ```
 
-- [ ] **Step 2: Create `components/Sections/Team/index.tsx`**
+- [x] **Step 2: Create `components/Sections/Team/index.tsx`**
 
 ```tsx
 import { memo } from 'react'
@@ -2316,7 +2316,7 @@ const Team = () => (
 export default memo(Team)
 ```
 
-- [ ] **Step 3: Typecheck and commit**
+- [x] **Step 3: Typecheck and commit**
 
 ```bash
 npx tsc --noEmit
@@ -2336,7 +2336,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 - Create: `components/Sections/Experience/TimelineItem.tsx`, `EducationItem.tsx`, `Timeline.tsx`
 - Modify: `components/Sections/Experience/index.tsx` (rewrite)
 
-- [ ] **Step 1: Create `config/experience.ts` and delete the `.tsx`**
+- [x] **Step 1: Create `config/experience.ts` and delete the `.tsx`**
 
 ```ts
 export type Milestone = { when: string; label: string }
@@ -2435,7 +2435,7 @@ export const education = {
 git rm -q config/experience.tsx components/Sections/Experience/ExperienceTab.tsx components/Sections/Experience/styles.module.css
 ```
 
-- [ ] **Step 2: Create `components/Sections/Experience/TimelineItem.tsx`**
+- [x] **Step 2: Create `components/Sections/Experience/TimelineItem.tsx`**
 
 ```tsx
 import {
@@ -2569,7 +2569,7 @@ const TimelineItem = ({ item }: { item: Experience }) => {
 export default TimelineItem
 ```
 
-- [ ] **Step 3: Create `components/Sections/Experience/EducationItem.tsx`**
+- [x] **Step 3: Create `components/Sections/Experience/EducationItem.tsx`**
 
 ```tsx
 import { Flex, HStack, Icon, Stack, Text, Wrap, WrapItem } from '@chakra-ui/react'
@@ -2620,7 +2620,7 @@ const EducationItem = () => {
 export default EducationItem
 ```
 
-- [ ] **Step 4: Create `components/Sections/Experience/Timeline.tsx`**
+- [x] **Step 4: Create `components/Sections/Experience/Timeline.tsx`**
 
 ```tsx
 import { Box } from '@chakra-ui/react'
@@ -2659,7 +2659,7 @@ const Timeline = () => {
 export default Timeline
 ```
 
-- [ ] **Step 5: Rewrite `components/Sections/Experience/index.tsx`**
+- [x] **Step 5: Rewrite `components/Sections/Experience/index.tsx`**
 
 ```tsx
 import { memo } from 'react'
@@ -2680,7 +2680,7 @@ const Experience = () => (
 export default memo(Experience)
 ```
 
-- [ ] **Step 6: Typecheck, build, commit**
+- [x] **Step 6: Typecheck, build, commit**
 
 ```bash
 npx tsc --noEmit && yarn build 2>&1 | tail -12
@@ -2699,7 +2699,7 @@ Expected: tsc silent, build `Compiled successfully`.
 **Files:**
 - Create: `components/Sections/Work/CaseStudyCard.tsx`, `index.tsx`
 
-- [ ] **Step 1: Create `components/Sections/Work/CaseStudyCard.tsx`**
+- [x] **Step 1: Create `components/Sections/Work/CaseStudyCard.tsx`**
 
 ```tsx
 import {
@@ -2823,7 +2823,7 @@ const CaseStudyCard = ({ work, index }: { work: Work; index: number }) => {
 export default CaseStudyCard
 ```
 
-- [ ] **Step 2: Create `components/Sections/Work/index.tsx`**
+- [x] **Step 2: Create `components/Sections/Work/index.tsx`**
 
 ```tsx
 import { memo } from 'react'
@@ -2850,7 +2850,7 @@ const Work = () => (
 export default memo(Work)
 ```
 
-- [ ] **Step 3: Typecheck and commit**
+- [x] **Step 3: Typecheck and commit**
 
 ```bash
 npx tsc --noEmit
@@ -2867,7 +2867,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 **Files:**
 - Create: `components/Sections/Now/index.tsx`
 
-- [ ] **Step 1: Create `components/Sections/Now/index.tsx`**
+- [x] **Step 1: Create `components/Sections/Now/index.tsx`**
 
 ```tsx
 import { memo } from 'react'
@@ -2937,7 +2937,7 @@ const Now = () => {
 export default memo(Now)
 ```
 
-- [ ] **Step 2: Typecheck and commit**
+- [x] **Step 2: Typecheck and commit**
 
 ```bash
 npx tsc --noEmit
@@ -2954,7 +2954,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 **Files:**
 - Create: `components/Sections/Contact/useConfetti.ts`, `Footer.tsx`, `index.tsx`
 
-- [ ] **Step 1: Create `components/Sections/Contact/useConfetti.ts`**
+- [x] **Step 1: Create `components/Sections/Contact/useConfetti.ts`**
 
 ```ts
 import { useCallback } from 'react'
@@ -2999,7 +2999,7 @@ const useConfetti = (): (() => void) => {
 export default useConfetti
 ```
 
-- [ ] **Step 2: Create `components/Sections/Contact/Footer.tsx`**
+- [x] **Step 2: Create `components/Sections/Contact/Footer.tsx`**
 
 ```tsx
 import { Box, Icon, Link, Text } from '@chakra-ui/react'
@@ -3026,7 +3026,7 @@ const Footer = () => {
 export default Footer
 ```
 
-- [ ] **Step 3: Create `components/Sections/Contact/index.tsx`**
+- [x] **Step 3: Create `components/Sections/Contact/index.tsx`**
 
 ```tsx
 import { memo } from 'react'
@@ -3117,7 +3117,7 @@ const Contact = () => {
 export default memo(Contact)
 ```
 
-- [ ] **Step 4: Typecheck and commit**
+- [x] **Step 4: Typecheck and commit**
 
 ```bash
 npx tsc --noEmit
@@ -3137,7 +3137,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 - Modify: `components/Misc/FavIconProvider.tsx`
 - Create: `scripts/og/index.html`, generate `public/og.png`
 
-- [ ] **Step 1: Rewrite `components/Misc/OpenGraphHead.tsx`**
+- [x] **Step 1: Rewrite `components/Misc/OpenGraphHead.tsx`**
 
 ```tsx
 import Head from 'next/head'
@@ -3173,7 +3173,7 @@ const OpenGraphHead = () => (
 export default OpenGraphHead
 ```
 
-- [ ] **Step 2: Create `components/Misc/ConsoleGreeting.tsx`**
+- [x] **Step 2: Create `components/Misc/ConsoleGreeting.tsx`**
 
 ```tsx
 import { useEffect } from 'react'
@@ -3198,7 +3198,7 @@ const ConsoleGreeting = () => {
 export default ConsoleGreeting
 ```
 
-- [ ] **Step 3: Update `components/Misc/FavIconProvider.tsx`**
+- [x] **Step 3: Update `components/Misc/FavIconProvider.tsx`**
 
 ```tsx
 import Head from 'next/head'
@@ -3221,7 +3221,7 @@ const FavIconProvider = ({ children }: { children: JSX.Element }) => {
 export default FavIconProvider
 ```
 
-- [ ] **Step 4: Create `scripts/og/index.html`**
+- [x] **Step 4: Create `scripts/og/index.html`**
 
 ```html
 <!doctype html>
@@ -3296,7 +3296,7 @@ export default FavIconProvider
 </html>
 ```
 
-- [ ] **Step 5: Render `public/og.png` with Edge headless**
+- [x] **Step 5: Render `public/og.png` with Edge headless**
 
 ```bash
 "/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe" --headless=new --disable-gpu --hide-scrollbars --window-size=1200,630 --virtual-time-budget=8000 --screenshot="C:\Users\pnguy\Projects\kl_portfolio\public\og.png" "file:///C:/Users/pnguy/Projects/kl_portfolio/scripts/og/index.html"
@@ -3305,7 +3305,7 @@ ls -la public/og.png
 
 Expected: `public/og.png` exists, roughly 100 to 400 KB. Open it with the Read tool and confirm: Poppins rendered (not a fallback serif), leaf visible, text not clipped. If the font is a fallback, raise `--virtual-time-budget` to 15000 and rerun.
 
-- [ ] **Step 6: Typecheck and commit**
+- [x] **Step 6: Typecheck and commit**
 
 ```bash
 npx tsc --noEmit
@@ -3323,7 +3323,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 - Modify: `pages/index.tsx` (rewrite), `pages/_app.tsx` (rewrite), `config/theme.ts` (remove legacy exports)
 - Delete: `components/Sidebar/`, `components/Avatar/`, `components/Menu/`, `components/Misc/ScrollMore.tsx`, `components/Sections/DevToArticles/`, `components/Sections/FeaturedWorks/`, `components/Sections/GetInTouch/`, `config/sidebar.ts`, `types/article.ts`, `hooks/useScrollDirection.tsx`
 
-- [ ] **Step 1: Rewrite `pages/index.tsx`**
+- [x] **Step 1: Rewrite `pages/index.tsx`**
 
 ```tsx
 import { Box } from '@chakra-ui/react'
@@ -3378,7 +3378,7 @@ const Portfolio = (): JSX.Element => (
 export default Portfolio
 ```
 
-- [ ] **Step 2: Rewrite `pages/_app.tsx`**
+- [x] **Step 2: Rewrite `pages/_app.tsx`**
 
 ```tsx
 import '../styles/globals.css'
@@ -3404,14 +3404,14 @@ function App({ Component, pageProps }: AppProps): JSX.Element {
 export default App
 ```
 
-- [ ] **Step 3: Delete legacy files**
+- [x] **Step 3: Delete legacy files**
 
 ```bash
 git rm -rq components/Sidebar components/Avatar components/Menu components/Sections/DevToArticles components/Sections/FeaturedWorks components/Sections/GetInTouch
 git rm -q components/Misc/ScrollMore.tsx config/sidebar.ts types/article.ts hooks/useScrollDirection.tsx
 ```
 
-- [ ] **Step 4: Remove the legacy exports from `config/theme.ts`**
+- [x] **Step 4: Remove the legacy exports from `config/theme.ts`**
 
 Delete the block between `// Legacy exports, ...` and `export const mobileBreakpointsMap = ...` inclusive, and drop `ColorMode` from the import. The top of the file becomes:
 
@@ -3422,7 +3422,7 @@ import { mode } from '@chakra-ui/theme-tools'
 export type Palette = {
 ```
 
-- [ ] **Step 5: Grep for template leftovers**
+- [x] **Step 5: Grep for template leftovers**
 
 ```bash
 grep -rniE "lawingco|klawingco|netlify|tech lead|KLSite|klAvatar|mainGrid|dev\.to" --include=*.ts --include=*.tsx --include=*.css --include=*.json --exclude-dir=node_modules --exclude-dir=.next --exclude-dir=.firebase --exclude-dir=docs . || echo "CLEAN"
@@ -3430,7 +3430,7 @@ grep -rniE "lawingco|klawingco|netlify|tech lead|KLSite|klAvatar|mainGrid|dev\.t
 
 Expected: `CLEAN`. Note `package-lock.json` and `yarn.lock` are matched by `*.json`/none; if `package-lock.json` matches on `dev.to`-like strings, that is a false positive, ignore it.
 
-- [ ] **Step 6: Typecheck, build, commit**
+- [x] **Step 6: Typecheck, build, commit**
 
 ```bash
 npx tsc --noEmit && yarn build 2>&1 | tail -15
@@ -3449,7 +3449,7 @@ Expected: tsc silent; build lists `/` as `○ (Static)` with no `getStaticProps`
 **Files:**
 - Possibly modify any component from Tasks 4 to 15 based on what the screenshots show.
 
-- [ ] **Step 1: Start the dev server in the background**
+- [x] **Step 1: Start the dev server in the background**
 
 ```bash
 yarn dev > "$SCRATCH/dev.log" 2>&1 &
@@ -3458,7 +3458,7 @@ sleep 8; grep -m1 "started server" "$SCRATCH/dev.log" || tail -5 "$SCRATCH/dev.l
 
 (`$SCRATCH` is the session scratchpad directory.) Expected: `ready - started server on 0.0.0.0:3000`.
 
-- [ ] **Step 2: Capture screenshots with Edge headless**
+- [x] **Step 2: Capture screenshots with Edge headless**
 
 ```bash
 EDGE="/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
@@ -3475,7 +3475,7 @@ ls -la "$OUT"
 
 Expected: eight PNG files. Open each with the Read tool.
 
-- [ ] **Step 3: Review against this checklist and fix anything failing**
+- [x] **Step 3: Review against this checklist and fix anything failing**
 
 - Hero: headline wraps on at most 3 lines at 1440, gradient and coral words visible, orbit chips not clipped, nav readable over blobs.
 - Impact: four tiles in one row on desktop, 2 by 2 on mobile, numbers rendered (the count finishes before the screenshot because of the virtual time budget).
@@ -3490,11 +3490,11 @@ Expected: eight PNG files. Open each with the Read tool.
 
 For each failure, edit the responsible component, re-run the relevant screenshot command, re-check.
 
-- [ ] **Step 4: Reduced-motion and interaction spot checks**
+- [x] **Step 4: Reduced-motion and interaction spot checks**
 
 Chrome/Edge headless cannot toggle `prefers-reduced-motion`, so verify by code review: every `useReducedMotion` consumer (Blobs, CursorGlow, Orbit, ScrollCue, Counter, FadeInWhenVisible, Contact, useConfetti) has a no-animation branch. Then in a real browser tab open `http://localhost:3000`: click the kaomoji (confetti fires), open devtools console (greeting prints), toggle theme and reload (mode persists), press Tab once (skip link appears), click each nav link (heading lands below the nav).
 
-- [ ] **Step 5: Stop the dev server, final build, commit**
+- [x] **Step 5: Stop the dev server, final build, commit**
 
 ```bash
 kill %1 2>/dev/null || true
