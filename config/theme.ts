@@ -1,13 +1,5 @@
-import { extendTheme, ColorMode } from '@chakra-ui/react'
+import { extendTheme } from '@chakra-ui/react'
 import { mode } from '@chakra-ui/theme-tools'
-
-// Legacy exports, removed in the final wiring task once old components are gone.
-interface IThemeMode {
-  Light: ColorMode
-  Dark: ColorMode
-}
-export const ThemeMode: IThemeMode = { Light: 'light', Dark: 'dark' }
-export const mobileBreakpointsMap = { base: true, md: true, lg: true, xl: false }
 
 export type Palette = {
   bg: string
