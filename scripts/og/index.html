@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>OG image source</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html, body { width: 1200px; height: 630px; overflow: hidden; }
+      body {
+        font-family: 'Poppins', sans-serif;
+        background: #0e1512;
+        color: #eaf4ee;
+        position: relative;
+      }
+      .blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(90px);
+        opacity: 0.55;
+      }
+      .a { width: 620px; height: 620px; left: -160px; top: -200px;
+           background: radial-gradient(circle at 30% 30%, #7ee0bc, transparent 70%); }
+      .b { width: 520px; height: 520px; right: -140px; bottom: -220px;
+           background: radial-gradient(circle at 30% 30%, #ff8a5b, transparent 70%); }
+      .wrap {
+        position: absolute; inset: 0;
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 0 96px;
+      }
+      .text { max-width: 760px; }
+      .eyebrow {
+        font-size: 22px; font-weight: 700; letter-spacing: 0.16em;
+        text-transform: uppercase; color: #7ee0bc; margin-bottom: 18px;
+      }
+      h1 { font-size: 64px; font-weight: 800; line-height: 1.05; letter-spacing: -0.02em; }
+      .grad {
+        background: linear-gradient(90deg, #7ee0bc, #ffb86b);
+        -webkit-background-clip: text; background-clip: text; color: transparent;
+      }
+      .sub { margin-top: 22px; font-size: 26px; font-weight: 500; color: #9fb5a9; }
+      .url { margin-top: 36px; font-size: 20px; font-weight: 600; color: #7ee0bc; letter-spacing: 0.04em; }
+      .leaf {
+        width: 260px; height: 260px; border-radius: 50%; flex-shrink: 0;
+        background: radial-gradient(circle at 35% 30%, rgba(126,224,188,0.18), #152019 70%);
+        border: 1px solid rgba(126,224,188,0.2);
+        box-shadow: 0 30px 80px -30px #7ee0bc;
+        display: flex; align-items: center; justify-content: center;
+      }
+      .leaf img { width: 160px; height: 160px; }
+    </style>
+  </head>
+  <body>
+    <div class="blob a"></div>
+    <div class="blob b"></div>
+    <div class="wrap">
+      <div class="text">
+        <div class="eyebrow">Mint Nguyen</div>
+        <h1>Founding Engineer.<br /><span class="grad">Building the product,</span><br />guiding the team.</h1>
+        <div class="sub">Loan management platform at Hatch · 7+ engineers guided · Calgary, AB</div>
+        <div class="url">mintnguyen.com</div>
+      </div>
+      <div class="leaf"><img src="../../public/logo.png" alt="" /></div>
+    </div>
+  </body>
+</html>
