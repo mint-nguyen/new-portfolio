@@ -1,190 +1,105 @@
 import { IconType } from 'react-icons'
 import {
-  SiDotnet,
-  SiJavascript,
   SiTypescript,
+  SiJavascript,
+  SiPython,
   SiNodedotjs,
+  SiNestjs,
   SiGraphql,
-  SiApollographql,
-  SiPhp,
+  SiDjango,
   SiReact,
   SiNextdotjs,
   SiRedux,
-  SiStyledcomponents,
-  SiGhost,
-  SiVuedotjs,
-  SiDocker,
-  SiGooglecloud,
-  SiCpanel,
-  SiRancher,
-  SiGitlab,
   SiPostgresql,
-  SiMicrosoftsqlserver,
   SiMysql,
   SiMongodb,
   SiRedis,
-  SiSocketdotio,
+  SiDocker,
+  SiAzuredevops,
+  SiGooglecloud,
+  SiFirebase,
+  SiFigma,
+  SiChakraui,
   SiMui,
   SiFramer,
-  SiGit,
-  SiGnubash,
-  SiVisualstudiocode,
-  SiUnity,
-  SiMicrosoft,
-  SiElectron,
-  SiDjango,
-  SiAzuredevops,
 } from 'react-icons/si'
-import { BsQuestionSquare } from 'react-icons/bs'
-import { AiOutlineAntDesign } from 'react-icons/ai'
-import { FaSourcetree } from 'react-icons/fa'
-import { IoLogoPwa } from 'react-icons/io5'
+import {
+  RiCodeSSlashLine,
+  RiServerLine,
+  RiLayoutLine,
+  RiDatabase2Line,
+  RiStackLine,
+  RiPaletteLine,
+} from 'react-icons/ri'
 
-export type SkillCategory =
-  | 'backend'
-  | 'frontend'
-  | 'cicd'
-  | 'database'
-  | 'ui frameworks'
-  | 'productivity boost'
-  | 'mobile'
+export type Skill = { name: string; icon?: IconType }
+export type SkillGroup = { label: string; icon: IconType; items: Skill[] }
 
-export type Skill = {
-  name: string
-  icon: IconType
-}
+export const fallbackIcon: IconType = RiCodeSSlashLine
 
-export const Skills: {
-  [key in SkillCategory]: Skill[]
-} = {
-  backend: [
-    {
-      name: 'Node',
-      icon: SiNodedotjs,
-    },
-    {
-      name: 'Javascript (ES6+)',
-      icon: SiJavascript,
-    },
-    {
-      name: 'Typescript',
-      icon: SiTypescript,
-    },
-    {
-      name: 'Graphql (JS, C#)',
-      icon: SiGraphql,
-    },
-    {
-      name: 'Django',
-      icon: SiDjango,
-    },
-  ],
-  frontend: [
-    {
-      name: 'React, RecoilJS',
-      icon: SiReact,
-    },
-    {
-      name: 'NextJS',
-      icon: SiNextdotjs,
-    },
-    {
-      name: 'Apollo Graphql',
-      icon: SiApollographql,
-    },
-    {
-      name: 'Redux',
-      icon: SiRedux,
-    },
-  ],
-  database: [
-    {
-      name: 'PostgreSQL',
-      icon: SiPostgresql,
-    },
-    {
-      name: 'MySQL',
-      icon: SiMysql,
-    },
-    {
-      name: 'MongoDb',
-      icon: SiMongodb,
-    },
-    {
-      name: 'Redis',
-      icon: SiRedis,
-    },
-  ],
-  cicd: [
-    {
-      name: 'Docker',
-      icon: SiDocker,
-    },
-    {
-      name: 'GCP',
-      icon: SiGooglecloud,
-    },
-    {
-      name: 'Azure Devops',
-      icon: SiAzuredevops,
-    },
-  ],
-  'ui frameworks': [
-    {
-      name: 'Styled Components',
-      icon: SiStyledcomponents,
-    },
-    {
-      name: 'MaterialUI',
-      icon: SiMui,
-    },
-    {
-      name: 'Framer Motion',
-      icon: SiFramer,
-    },
-    {
-      name: 'ChakraUI',
-      icon: BsQuestionSquare,
-    },
-  ],
-  'productivity boost': [
-    {
-      name: 'VSCode',
-      icon: SiVisualstudiocode,
-    },
-    {
-      name: 'Git',
-      icon: SiGit,
-    },
-    {
-      name: 'Bash',
-      icon: SiGnubash,
-    },
-  ],
-  mobile: [
-    {
-      name: 'React Native',
-      icon: SiReact,
-    },
-  ],
-}
+export const skillGroups: SkillGroup[] = [
+  {
+    label: 'Languages',
+    icon: RiCodeSSlashLine,
+    items: [
+      { name: 'TypeScript', icon: SiTypescript },
+      { name: 'JavaScript (ES6+)', icon: SiJavascript },
+      { name: 'Python', icon: SiPython },
+    ],
+  },
+  {
+    label: 'Backend',
+    icon: RiServerLine,
+    items: [
+      { name: 'Node', icon: SiNodedotjs },
+      { name: 'NestJS', icon: SiNestjs },
+      { name: 'GraphQL', icon: SiGraphql },
+      { name: 'Django', icon: SiDjango },
+    ],
+  },
+  {
+    label: 'Frontend',
+    icon: RiLayoutLine,
+    items: [
+      { name: 'React', icon: SiReact },
+      { name: 'Next.js', icon: SiNextdotjs },
+      { name: 'Redux', icon: SiRedux },
+      { name: 'React Native', icon: SiReact },
+    ],
+  },
+  {
+    label: 'Data',
+    icon: RiDatabase2Line,
+    items: [
+      { name: 'PostgreSQL', icon: SiPostgresql },
+      { name: 'MySQL', icon: SiMysql },
+      { name: 'MongoDB', icon: SiMongodb },
+      { name: 'Redis', icon: SiRedis },
+    ],
+  },
+  {
+    label: 'Infra and delivery',
+    icon: RiStackLine,
+    items: [
+      { name: 'Docker', icon: SiDocker },
+      { name: 'Azure DevOps', icon: SiAzuredevops },
+      { name: 'Google Cloud', icon: SiGooglecloud },
+      { name: 'Firebase', icon: SiFirebase },
+    ],
+  },
+  {
+    label: 'Design and UI',
+    icon: RiPaletteLine,
+    items: [
+      { name: 'Figma', icon: SiFigma },
+      { name: 'Chakra UI', icon: SiChakraui },
+      { name: 'Material UI', icon: SiMui },
+      { name: 'Framer Motion', icon: SiFramer },
+    ],
+  },
+]
 
-export const splitSkills = (srcArray: Skill[]) => {
-  const arrLength = srcArray.length
-  const isEvenChunk = arrLength % 2 === 0
-
-  let chunk = 4
-  if (isEvenChunk) {
-    chunk = arrLength / 2
-  } else if (arrLength <= 5 && arrLength > 2) {
-    chunk = 3
-  }
-
-  let i = 0
-  let j = 0
-  const temporary = []
-  for (i = 0, j = srcArray.length; i < j; i += chunk) {
-    temporary.push(srcArray.slice(i, i + chunk))
-  }
-  return temporary
-}
+export const currentlyLearning: string[] = [
+  'System design and architecture',
+  'Engineering management',
+]
