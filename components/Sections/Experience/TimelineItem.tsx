@@ -20,7 +20,13 @@ import {
 import { Experience } from 'config/experience'
 import usePalette from 'hooks/usePalette'
 
-export const Marker = ({ children }: { children: React.ReactNode }) => {
+export const Marker = ({
+  children,
+  bg,
+}: {
+  children: React.ReactNode
+  bg?: string
+}) => {
   const p = usePalette()
   return (
     <Flex
@@ -29,7 +35,7 @@ export const Marker = ({ children }: { children: React.ReactNode }) => {
       top={0}
       boxSize={{ base: '36px', md: '80px' }}
       borderRadius="full"
-      bg={p.logoBg}
+      bg={bg ?? p.logoBg}
       borderWidth="2px"
       borderColor={p.surfaceBorder}
       align="center"
@@ -65,7 +71,7 @@ const TimelineItem = ({ item }: { item: Experience }) => {
   const p = usePalette()
   return (
     <Flex as="li" position="relative" pb={{ base: 8, md: 10 }} pl={{ base: 14, md: 28 }}>
-      <Marker>
+      <Marker bg={item.logoBg}>
         <Image
           src={item.logo}
           alt={`${item.longName} logo`}

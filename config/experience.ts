@@ -9,6 +9,8 @@ export type Experience = {
   position: string
   duration: string
   logo: string
+  /** Marker background when the logo needs a dark backdrop (white-on-transparent art). */
+  logoBg?: string
   milestone?: Milestone
   roles: string[]
 }
@@ -74,6 +76,7 @@ export const experiences: Experience[] = [
     position: 'Data Engineer',
     duration: 'Oct 2021 – Feb 2022',
     logo: '/worked_at_logos/base/base_name.png',
+    logoBg: '#121212',
     roles: [
       'Developed and maintained scalable data pipelines to process and analyze large volumes of data.',
       'Optimized database performance and query execution to improve overall system efficiency.',

@@ -3,7 +3,7 @@ import {
   Button,
   Container,
   Heading,
-  SimpleGrid,
+  Grid,
   Stack,
   Text,
 } from '@chakra-ui/react'
@@ -32,15 +32,15 @@ const Hero = () => {
       aria-label="Introduction"
       position="relative"
       overflow="hidden"
-      pt={{ base: 28, md: 36 }}
+      pt={{ base: 28, md: 32 }}
       pb={{ base: 16, md: 24 }}
-      minH={{ lg: '92vh' }}
+      minH={{ lg: 'min(92vh, 880px)' }}
       display="flex"
       alignItems="center"
     >
       <Blobs variant="hero" />
       <Container maxW="1200px" px={{ base: 4, md: 8 }} position="relative" zIndex={1}>
-        <SimpleGrid columns={{ base: 1, lg: 2 }} spacing={{ base: 12, lg: 8 }} alignItems="center">
+        <Grid templateColumns={{ base: '1fr', lg: '1.15fr 1fr' }} gap={{ base: 12, lg: 10 }} alignItems="center">
           <MotionStack variants={stagger} initial="initial" animate="animate" spacing={6}>
             <MotionText
               variants={fadeInUp}
@@ -56,7 +56,7 @@ const Hero = () => {
             <MotionHeading
               as="h1"
               variants={fadeInUp}
-              fontSize={{ base: '2.5rem', md: '3.4rem', xl: '4.1rem' }}
+              fontSize={{ base: '2.5rem', md: '3.2rem', xl: '3.7rem' }}
               lineHeight={1.05}
               fontWeight={800}
             >
@@ -109,7 +109,7 @@ const Hero = () => {
             </MotionBox>
           </MotionStack>
           <Orbit />
-        </SimpleGrid>
+        </Grid>
       </Container>
       <ScrollCue />
     </Box>
