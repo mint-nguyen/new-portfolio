@@ -1,32 +1,16 @@
 import { memo } from 'react'
-import { Heading, Text, Stack, Link } from '@chakra-ui/react'
-import ExperienceTab from './ExperienceTab'
-const DetailSection = () => (
-  <Stack
-    width={{ base: '99%', lg: '60%', xl: '75%' }}
-    height="100%"
-    spacing={{ base: 6, xl: 8 }}
-  >
-    <Heading
-      size="2xl"
-      style={{
-        fontVariantCaps: 'small-caps',
-      }}
-    >
-      Places i’ve worked.
-    </Heading>
-    <Text variant="description">
-      Since 2020, had a privilege to work with several companies that enables me
-      to hone my skills and talents. These companies will always have a special
-      place in my heart. Currently I am working with{' '}
-      <Link href="https://www.hatchlabs.app/" target="_blank" rel="noreferrer">
-        Hatch Inc.
-      </Link>
-      .
-    </Text>
+import Section from 'components/Layout/Section'
+import Timeline from './Timeline'
 
-    <ExperienceTab />
-  </Stack>
+const Experience = () => (
+  <Section
+    id="experience"
+    eyebrow="Experience"
+    heading="Where I've worked."
+    intro="Four companies since 2020, each one a bigger slice of the stack. The last one I helped build from the ground up."
+  >
+    <Timeline />
+  </Section>
 )
 
-export default memo(DetailSection)
+export default memo(Experience)
