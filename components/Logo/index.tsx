@@ -1,51 +1,25 @@
-import { memo, useState } from 'react'
-import { useColorMode, Image, useBreakpointValue } from '@chakra-ui/react'
-import Link from 'next/link'
-import { motion, AnimatePresence } from 'framer-motion'
-import styles from './styles.module.css'
-import { ThemeMode, mobileBreakpointsMap } from 'config/theme'
-import { simpleOpacity } from 'config/animations'
+import { memo } from 'react'
+import { Box, Image } from '@chakra-ui/react'
 
-const Logo = () => {
-  const { colorMode } = useColorMode()
-  const [isLogoLoaded, setLogoLoaded] = useState(false)
-  const MotionImage = motion(Image)
-  const isMobile = useBreakpointValue(mobileBreakpointsMap)
-  return (
-    <AnimatePresence>
-      <Link href="/" passHref>
-        {colorMode === ThemeMode.Dark ? (
-          <MotionImage
-            className={!isMobile ? styles.logo : ''}
-            boxSize={isMobile ? '30px' : '50px'}
-            objectFit="cover"
-            src="./logo.png"
-            alt="KL Lawingco Logo"
-            fallbackSrc="./logo.png"
-            variants={simpleOpacity}
-            initial="initial"
-            animate={isLogoLoaded && 'animate'}
-            onLoad={() => setLogoLoaded(true)}
-            zIndex={2}
-          />
-        ) : (
-          <MotionImage
-            className={!isMobile ? styles.logo : ''}
-            boxSize={isMobile ? '30px' : '50px'}
-            objectFit="cover"
-            src="./logo_light.png"
-            fallbackSrc="./logo_light.png"
-            alt="KL Lawingco Logo"
-            variants={simpleOpacity}
-            initial="initial"
-            animate={isLogoLoaded && 'animate'}
-            onLoad={() => setLogoLoaded(true)}
-            zIndex={2}
-          />
-        )}
-      </Link>
-    </AnimatePresence>
-  )
-}
+const Logo = ({ size = 40 }: { size?: number }) => (
+  <Box
+    as="a"
+    href="#top"
+    aria-label="Back to top"
+    display="inline-flex"
+    alignItems="center"
+    transition="transform 0.25s ease"
+    _hover={{ transform: 'rotate(-12deg) scale(1.08)' }}
+  >
+    <Image
+      src="/logo.png"
+      alt="Mint Nguyen leaf logo"
+      htmlWidth={size}
+      htmlHeight={size}
+      boxSize={`${size}px`}
+      objectFit="contain"
+    />
+  </Box>
+)
 
 export default memo(Logo)
