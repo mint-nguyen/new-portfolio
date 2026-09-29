@@ -3,7 +3,7 @@
    and by build-docx.js as a CommonJS module. Edit text here, then run resume/build.sh. */
 const RESUME = {
   name: 'Mint Nguyen',
-  headline: 'Full Stack Software Engineer · Founding Engineer at Hatch',
+  headline: 'Full Stack Software Engineer · Founding Engineer',
   location: 'Calgary, AB',
   email: 'pnguyen.lhp@gmail.com',
   phone: '+1 672 999 6118',
