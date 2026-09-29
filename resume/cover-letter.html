@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Mint Nguyen – Cover Letter</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  @page { size: Letter; margin: 0.75in 0.8in; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #fff; }
+  body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    font-size: 10.8pt;
+    line-height: 1.5;
+    color: #12211a;
+    width: 6.9in;
+    margin: 0 auto;
+  }
+  a { color: inherit; text-decoration: none; }
+  header { border-bottom: 1px solid #1f7a5c; padding-bottom: 8pt; margin-bottom: 18pt; }
+  .name { font-size: 20pt; font-weight: 700; line-height: 1.1; }
+  .headline { font-size: 10.5pt; font-weight: 600; color: #1f7a5c; margin-top: 2pt; }
+  .contact { font-size: 9.2pt; color: #4e6a5c; margin-top: 3pt; }
+  .contact span + span::before { content: ' · '; color: #9fb5a9; }
+  .meta { color: #4e6a5c; margin-bottom: 14pt; }
+  .meta div { line-height: 1.4; }
+  p { margin-bottom: 10pt; }
+  .field { color: #1f7a5c; font-weight: 600; }
+  .closing { margin-top: 14pt; }
+  .signature { font-weight: 700; margin-top: 14pt; }
+  .sigline { color: #4e6a5c; font-size: 9.6pt; }
+</style>
+</head>
+<body>
+<script src="./data.js"></script>
+<script>
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
+  // Bracketed template fields get a mint highlight so they are easy to find.
+  const fields = (s) => esc(s).replace(/\[[^\]]+\]/g, (m) => `<span class="field">${m}</span>`)
+  const r = RESUME
+  const c = r.coverLetter
+  document.body.insertAdjacentHTML('beforeend', `
+    <header>
+      <div class="name">${esc(r.name)}</div>
+      <div class="headline">${esc(r.headline)}</div>
+      <div class="contact">
+        <span>${esc(r.location)}</span>
+        <span><a href="mailto:${esc(r.email)}">${esc(r.email)}</a></span>
+        <span>${esc(r.phone)}</span>
+        <span><a href="https://${esc(r.linkedin)}">${esc(r.linkedin)}</a></span>
+        <span><a href="https://${esc(r.site)}">${esc(r.site)}</a></span>
+      </div>
+    </header>
+    <div class="meta">
+      <div>${fields(c.date)}</div>
+      <div style="margin-top:8pt">${c.recipient.map(fields).join('<br />')}</div>
+    </div>
+    <p>${fields(c.salutation)}</p>
+    ${c.paragraphs.map((p) => `<p>${fields(p)}</p>`).join('')}
+    <p class="closing">${esc(c.closing)}</p>
+    <div class="signature">${esc(c.signature)}</div>
+    <div class="sigline">${esc(c.signatureLine)}</div>
+  `)
+</script>
+</body>
+</html>

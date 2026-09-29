@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Mint Nguyen – Resume</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  @page { size: Letter; margin: 0.55in; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #fff; }
+  body {
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+    font-size: 9.9pt;
+    line-height: 1.32;
+    color: #12211a;
+    width: 7.4in;
+    margin: 0 auto;
+  }
+  a { color: inherit; text-decoration: none; }
+  header { margin-bottom: 8pt; }
+  .name { font-size: 22pt; font-weight: 700; letter-spacing: -0.01em; line-height: 1.1; }
+  .headline { font-size: 11pt; font-weight: 600; color: #1f7a5c; margin-top: 2pt; }
+  .contact { font-size: 8.4pt; color: #4e6a5c; margin-top: 4pt; }
+  .contact span + span::before { content: ' · '; color: #9fb5a9; }
+  h2 {
+    font-size: 9.2pt; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em;
+    color: #1f7a5c; border-bottom: 1px solid #1f7a5c; padding-bottom: 2pt;
+    margin: 8pt 0 4pt;
+  }
+  .role { display: flex; justify-content: space-between; align-items: baseline; margin-top: 5pt; }
+  .role.first { margin-top: 0; }
+  .title { font-weight: 700; }
+  .company { color: #1f7a5c; font-weight: 600; }
+  .where { color: #4e6a5c; }
+  .dates { color: #4e6a5c; font-size: 9.2pt; white-space: nowrap; margin-left: 12pt; }
+  ul { list-style: none; margin-top: 2pt; }
+  li { position: relative; padding-left: 11pt; font-size: 9.5pt; margin-top: 1.5pt; }
+  li::before { content: ''; position: absolute; left: 0; top: 0.52em; width: 5px; height: 5px; background: #1f7a5c; border-radius: 1px; }
+  .skills div { margin-top: 1.5pt; }
+  .skills b { font-weight: 600; }
+  .edu { display: flex; justify-content: space-between; align-items: baseline; }
+  .honors { color: #4e6a5c; font-size: 9.6pt; margin-top: 1pt; }
+</style>
+</head>
+<body>
+<script src="./data.js"></script>
+<script>
+  const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]))
+  const r = RESUME
+  const exp = r.experience.map((e, i) => `
+    <div class="role${i === 0 ? ' first' : ''}">
+      <div><span class="title">${esc(e.role)}</span> · <span class="company">${esc(e.company)}</span> · <span class="where">${esc(e.location)}</span></div>
+      <div class="dates">${esc(e.dates)}</div>
+    </div>
+    <ul>${e.bullets.map((b) => `<li>${esc(b)}</li>`).join('')}</ul>`).join('')
+  const skills = r.skills.map((s) => `<div><b>${esc(s.label)}:</b> ${esc(s.items)}</div>`).join('')
+  document.body.insertAdjacentHTML('beforeend', `
+    <header>
+      <div class="name">${esc(r.name)}</div>
+      <div class="headline">${esc(r.headline)}</div>
+      <div class="contact">
+        <span>${esc(r.location)}</span>
+        <span><a href="mailto:${esc(r.email)}">${esc(r.email)}</a></span>
+        <span>${esc(r.phone)}</span>
+        <span><a href="https://${esc(r.linkedin)}">${esc(r.linkedin)}</a></span>
+        <span><a href="https://${esc(r.github)}">${esc(r.github)}</a></span>
+        <span><a href="https://${esc(r.site)}">${esc(r.site)}</a></span>
+      </div>
+    </header>
+    <h2>Summary</h2>
+    <p>${esc(r.summary)}</p>
+    <h2>Experience</h2>
+    ${exp}
+    <h2>Skills</h2>
+    <div class="skills">${skills}</div>
+    <h2>Education</h2>
+    <div class="edu">
+      <div><span class="title">${esc(r.education.degree)}</span> · <span class="company">${esc(r.education.school)}</span> · <span class="where">${esc(r.education.location)}</span></div>
+      <div class="dates">${esc(r.education.dates)}</div>
+    </div>
+    <div class="honors">${esc(r.education.honors)}</div>
+  `)
+</script>
+</body>
+</html>

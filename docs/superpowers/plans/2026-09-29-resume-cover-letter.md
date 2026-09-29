@@ -17,7 +17,7 @@
 **Files:**
 - Create: `resume/data.js`
 
-- [ ] **Step 1: Write `resume/data.js`**
+- [x] **Step 1: Write `resume/data.js`**
 
 ```js
 /* Single source of truth for the resume and cover letter.
@@ -121,7 +121,7 @@ const RESUME = {
 if (typeof module !== 'undefined') module.exports = RESUME
 ```
 
-- [ ] **Step 2: Verify it loads as a module and contains no forbidden titles**
+- [x] **Step 2: Verify it loads as a module and contains no forbidden titles**
 
 ```bash
 node -e "const r=require('./resume/data.js'); console.log(r.experience.length, 'roles;', r.coverLetter.paragraphs.length, 'paragraphs')"
@@ -137,7 +137,7 @@ Expected: `5 roles; 4 paragraphs` and then `CLEAN` (the only "manager" hits allo
 **Files:**
 - Create: `resume/resume.html`, `resume/cover-letter.html`
 
-- [ ] **Step 1: Write `resume/resume.html`**
+- [x] **Step 1: Write `resume/resume.html`**
 
 ```html
 <!doctype html>
@@ -229,7 +229,7 @@ Expected: `5 roles; 4 paragraphs` and then `CLEAN` (the only "manager" hits allo
 </html>
 ```
 
-- [ ] **Step 2: Write `resume/cover-letter.html`**
+- [x] **Step 2: Write `resume/cover-letter.html`**
 
 ```html
 <!doctype html>
@@ -301,7 +301,7 @@ Expected: `5 roles; 4 paragraphs` and then `CLEAN` (the only "manager" hits allo
 </html>
 ```
 
-- [ ] **Step 3: Print both to PDF and check page counts**
+- [x] **Step 3: Print both to PDF and check page counts**
 
 ```bash
 EDGE="/c/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
@@ -320,7 +320,7 @@ Expected: both report `1 page(s)`. If the resume reports 2, reduce `body { font-
 **Files:**
 - Create: `resume/build-docx.js`, `resume/build.sh`
 
-- [ ] **Step 1: Write `resume/build-docx.js`**
+- [x] **Step 1: Write `resume/build-docx.js`**
 
 ```js
 /* Renders resume/data.js to two .docx files with docx-js. Run: node resume/build-docx.js */
@@ -442,7 +442,7 @@ Promise.all([Packer.toBuffer(resumeDoc), Packer.toBuffer(letterDoc)]).then(([a, 
 })
 ```
 
-- [ ] **Step 2: Write `resume/build.sh`**
+- [x] **Step 2: Write `resume/build.sh`**
 
 ```bash
 #!/usr/bin/env bash
@@ -470,7 +470,7 @@ for p in ['public/Mint_Nguyen.pdf', 'resume/Mint_Nguyen_Cover_Letter.pdf']:
 PY
 ```
 
-- [ ] **Step 3: Run the build**
+- [x] **Step 3: Run the build**
 
 ```bash
 bash resume/build.sh
@@ -479,7 +479,7 @@ ls -la public/Mint_Nguyen.pdf resume/*.pdf resume/*.docx
 
 Expected: the docx script prints its "wrote" line, both PDFs report `1 page(s)`, four output files exist.
 
-- [ ] **Step 4: Render the Word files through Word and inspect**
+- [x] **Step 4: Render the Word files through Word and inspect**
 
 Use the PowerShell tool:
 
@@ -498,7 +498,7 @@ $w.Quit()
 
 Expected: each reports `1 page(s)`. Open the two exported PDFs with the Read tool and confirm the layout: right-aligned dates, mint headings with rules, bullets, bracket fields in the letter. If Word is unavailable, fall back to `python -c "import docx; print('\n'.join(p.text for p in docx.Document('resume/Mint_Nguyen_Resume.docx').paragraphs))"` and compare against `data.js`.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add resume public/Mint_Nguyen.pdf package.json package-lock.json
