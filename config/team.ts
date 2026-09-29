@@ -22,7 +22,7 @@ export const principles: Principle[] = [
     icon: RiGitPullRequestLine,
     title: 'Ship small, ship safe.',
     body:
-      'Small PRs, honest code review, and pipelines that carry a change from laptop to production without drama. Boring releases are a feature.',
+      'Small PRs, honest code review, and a release process that carries a change from laptop to production without drama. Boring releases are a feature.',
   },
   {
     icon: RiCompass3Line,
@@ -34,6 +34,6 @@ export const principles: Principle[] = [
     icon: RiRouteLine,
     title: 'Own the whole path.',
     body:
-      "Architecture, APIs, UI, and the deploy button. If it's on the critical path, I'll learn it, fix it, or find who can.",
+      "Architecture, APIs, UI, and the Figma file. If it's on the critical path, I'll learn it, fix it, or find who can.",
   },
 ]

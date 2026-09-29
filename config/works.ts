@@ -13,16 +13,16 @@ export type Work = {
 
 export const works: Work[] = [
   {
-    title: 'Hatch loan management platform',
+    title: 'Hatch application processing platform',
     image: '/works/hatch.png',
     objectPosition: 'top left',
     problem:
-      'Lenders were running personal and business loans through disconnected tools and manual decisions. Approvals were slow and disbursements error-prone.',
+      'Lenders were vetting applicants by hand across disconnected tools: identity documents, KYC and KYB checks, bank statements, background checks. Slow to approve and easy to get wrong.',
     didWhat:
-      'Built the platform end to end from the first commit. Designed the flows in Figma, automated decisioning and disbursement, and set up the pipeline that takes a change from dev to production.',
+      'Built the platform end to end from the first commit. Designed the flows in Figma, wired identity verification (IDV), KYC, KYB, instant bank verification (IBV) and background checks into one automated flow.',
     outcome:
-      'One platform for both loan types, decisions and payouts that run themselves, and a release process the team trusts. Now guiding the 7+ engineers who keep shipping it.',
-    tags: ['Next.js', 'TypeScript', 'Node', 'PostgreSQL', 'Azure DevOps', 'Figma'],
+      'One platform that takes an application from submission to decision automatically, and a release process the team trusts. Now guiding the 7+ engineers who keep shipping it.',
+    tags: ['Next.js', 'TypeScript', 'Node', 'PostgreSQL', 'AWS', 'Figma'],
     ctaLabel: 'See the Figma sample',
     ctaUrl:
       'https://www.figma.com/design/hV82zLGtFam6OJgud988Ex/Sample-Display',

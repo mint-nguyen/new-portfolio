@@ -30,7 +30,7 @@ export const profile = {
     after: ' the teams that grow around them.',
   },
   heroSub:
-    "Founding Engineer at Hatch. I've been here since day one, shipping a loan management platform for lenders. As the team grew to 7+, I became the person everyone pings about the codebase. APIs, frontends, Figma, deploy pipelines, and the glue in between.",
+    "Founding Engineer at Hatch. I've been here since day one, shipping an automated application processing platform for lenders, from identity and bank verification to background checks. As the team grew to 7+, I became the person everyone pings about the codebase. APIs, frontends, Figma, and the glue in between.",
   heroChips: [
     { icon: RiTeamLine, label: '7+ engineers guided' },
     { icon: RiRocket2Line, label: `Shipping since ${SINCE_YEAR}` },

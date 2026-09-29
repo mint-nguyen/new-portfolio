@@ -20,7 +20,7 @@ export const experiences: Experience[] = [
     key: 'hatch',
     name: 'Hatch',
     longName: 'Hatch Inc.',
-    tagline: 'Automates decision-making and disbursements across lending.',
+    tagline: 'Automated application processing for lenders: IDV, KYC, KYB, IBV and background checks.',
     url: 'https://www.hatchlabs.app/',
     position: 'Founding Engineer',
     duration: 'Feb 2024 – Present',
@@ -31,11 +31,10 @@ export const experiences: Experience[] = [
         'Team scaled to 7+. Became the go-to guide for onboarding, reviews and architecture.',
     },
     roles: [
-      'Built the loan management platform for personal and business lending from the first commit: decision automation, disbursements, and the admin tooling around them.',
+      'Built the automated application processing platform from the first commit: identity verification (IDV), KYC and KYB checks, instant bank verification (IBV), background checks, and the decisioning and admin tooling around them.',
       'Guide a team of 7+ engineers through the codebase: onboarding, code review standards, and architecture decisions.',
       'Work directly with founders and stakeholders to gather requirements, define scope, and keep delivery aligned with business goals.',
       'Design wireframes and mockups in Figma, then ship them.',
-      'Own the deployment pipeline from development to production.',
     ],
   },
   {

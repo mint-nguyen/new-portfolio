@@ -11,7 +11,7 @@ const RESUME = {
   github: 'github.com/mint-nguyen',
   site: 'mintnguyen.com',
   summary:
-    'Full stack software engineer with 6 years of shipping. Founding Engineer at Hatch, where I built a loan management platform for lenders from the first commit and now guide a team of 7+ engineers through it. Concurrently building pricing and operations software at S&T Properties, including a price-prediction model and a property management system that unifies every online travel agency. Strongest in TypeScript, React, Next.js, Node, NestJS, PostgreSQL, Python, Azure DevOps and Figma.',
+    'Full stack software engineer with 6 years of shipping. Founding Engineer at Hatch, where I built an automated application processing platform for lenders (IDV, KYC, KYB, IBV, background checks) from the first commit and now guide a team of 7+ engineers through it. Concurrently building pricing and operations software at S&T Properties, including a price-prediction model and a property management system that unifies every online travel agency. Strongest in TypeScript, React, Next.js, Node, NestJS, PostgreSQL, Python and Figma.',
   experience: [
     {
       company: 'Hatch Inc.',
@@ -19,10 +19,9 @@ const RESUME = {
       role: 'Founding Engineer',
       dates: 'Feb 2024 – Present',
       bullets: [
-        'Built the loan management platform for personal and business lending from the first commit: decision automation, disbursements, and the admin tooling around them.',
+        'Built the automated application processing platform from the first commit: identity verification (IDV), KYC and KYB checks, instant bank verification (IBV), background checks, and the decisioning and admin tooling around them.',
         'Guide a team of 7+ engineers through the codebase: onboarding, code review standards, and architecture decisions.',
         'Work directly with founders and stakeholders to turn business goals into scoped, shippable work; design wireframes in Figma, then build them.',
-        'Own the deployment pipeline from development to production on Azure DevOps.',
       ],
     },
     {
@@ -85,8 +84,8 @@ const RESUME = {
     recipient: ['[Hiring manager name, or "Hiring team"]', '[Company]'],
     salutation: 'Dear [Hiring manager name or team],',
     paragraphs: [
-      "I'm a full stack engineer who likes being there from the first commit. At Hatch I built a loan management platform for lenders from an empty repo, and as the team grew to 7+ engineers I became the person everyone pings about the codebase. I'd love to bring that same energy to the [Role] role at [Company], [one sentence on why this company].",
-      "Building Hatch's platform meant owning the whole path: gathering requirements with the founders, wireframing in Figma, shipping the APIs and front ends, automating decisioning and disbursements, and running the pipeline that takes a change from laptop to production. Just as important, it meant keeping a growing team unblocked with small PRs, honest code review, and a map of the codebase that every new engineer gets in their first week.",
+      "I'm a full stack engineer who likes being there from the first commit. At Hatch I built an automated application processing platform for lenders from an empty repo, and as the team grew to 7+ engineers I became the person everyone pings about the codebase. I'd love to bring that same energy to the [Role] role at [Company], [one sentence on why this company].",
+      "Building Hatch's platform meant owning the whole path: gathering requirements with the founders, wireframing in Figma, shipping the APIs and front ends, and wiring identity verification, KYC, KYB, bank verification and background checks into one automated flow. Just as important, it meant keeping a growing team unblocked with small PRs, honest code review, and a map of the codebase that every new engineer gets in their first week.",
       'Alongside Hatch, I build internal software at S&T Properties: pricing tools with a price-prediction model that improved revenue, operations tools, and a property management system that pulls every online travel agency into one place. Different domain, same habit of turning a fuzzy business goal into something a team can ship.',
       "I work best in small teams that move fast and care about the details, which is why [Company] caught my eye. I'd welcome a conversation about how I can help. Thank you for your time, and if we do talk, the mint tea is on me.",
     ],

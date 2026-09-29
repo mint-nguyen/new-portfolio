@@ -14,7 +14,7 @@ export const nowItems: NowItem[] = [
   {
     icon: RiHammerLine,
     label: 'Building',
-    body: "A loan management platform at Hatch, with a team I'm proud of.",
+    body: "An automated application processing platform at Hatch, with a team I'm proud of.",
   },
   {
     icon: RiBookOpenLine,
